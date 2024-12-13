@@ -1,0 +1,31 @@
+jobs:
+  build:
+    # ... (Same as previous configuration)
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.x
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_HUB_USERNAME }}
+        password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+    - name: Deploy to Docker Hub
+      run: |
+        docker tag your-username/your-app:${{ github.sha }} your-username/your-app:latest
+        docker push your-username/your-app:latest
+
+    - name: Deploy to Kubernetes (Example)
+      run: |
+        kubectl apply -f k8s/deployment.yaml

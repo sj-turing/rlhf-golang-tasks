@@ -1,0 +1,58 @@
+name: Go CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ] # Adjust the branch name as needed
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Use the latest Ubuntu environment
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: '1.18' # Use the specific Go version your project requires
+
+    - name: Download dependencies
+      run: go mod tidy
+
+    - name: Lint with Golint
+      run: go lint ./...
+
+    - name: Format with Gofmt
+      run: gofmt -w ./...
+
+    - name: Test
+      run: go test -v ./...
+
+    - name: Build container image
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        tags: your-docker-hub-username/your-go-app:${{ github.ref.short_name }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_HUB_USERNAME }}
+        password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+    - name: Deploy to Kubernetes
+      env:
+        KUBECONFIG: ${{ secrets.KUBECONFIG }}
+      run: kubectl apply -f deployment.yaml

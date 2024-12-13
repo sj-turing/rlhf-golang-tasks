@@ -1,0 +1,2 @@
+1. used io/ioutil which is deprecated package
+2. for MarshallJson node struct has only Val field, missing Left and Right

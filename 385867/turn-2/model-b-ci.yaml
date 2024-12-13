@@ -1,0 +1,41 @@
+name: Golang Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.x
+
+    - name: Install dependencies
+      run: go mod tidy
+
+    - name: Lint and format code
+      run: |
+        go mod install golang.org/x/lint/golint
+        golint ./...
+        go fmt ./...
+
+    - name: Test the code
+      run: go test ./...
+
+    - name: Build the Docker image
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        tags: your-username/your-app:${{ github.sha }}

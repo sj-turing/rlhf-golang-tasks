@@ -1,0 +1,31 @@
+# Use an official Go base image as the parent image
+FROM golang:1.18 as build
+
+# Set the working directory in the container
+WORKDIR /go/src/app
+
+# Copy the package file and dependencies
+COPY go.mod .
+COPY go.sum .
+RUN go mod download
+
+# Copy the rest of the application code
+COPY . .
+
+# Run the build command
+RUN go build -o app
+
+# Use a slim Alpine image as the base image for the production environment
+FROM alpine:latest
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the built binary into the container
+COPY --from=build /go/src/app/app .
+
+# Expose the port the application runs on
+EXPOSE 8080
+
+# Run the application
+CMD ["app"]

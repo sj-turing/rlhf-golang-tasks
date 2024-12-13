@@ -1,0 +1,46 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  DOCKER_HOST: tcp://docker:2375  # Adjust this if using a different Docker socket
+  IMAGE_TAG: $CI_COMMIT_SHORT_SHA
+
+services:
+  - docker:dind  # Docker in Docker service
+
+before_script:
+  - docker info
+  - go get -u github.com/golang/dep/cmd/dep
+  - dep ensure
+
+build:
+  stage: build
+  script:
+    - docker build -t golang-app:$IMAGE_TAG .
+  artifacts:
+    paths:
+      - images/
+
+test:
+  stage: test
+  script:
+    - docker run --rm golang-app:$IMAGE_TAG go test ./...
+
+deploy_staging:
+  stage: deploy
+  environment: staging
+  script:
+    - docker tag golang-app:$IMAGE_TAG golang-app:staging
+    - docker push golang-app:staging
+  only:
+    - master
+
+deploy_production:
+  stage: deploy
+  environment: production
+  script:
+    - docker tag golang-app:$IMAGE_TAG golang-app:production
+    - docker push golang-app:production
+  when: manual

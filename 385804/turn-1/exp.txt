@@ -1,0 +1,13 @@
+Modal B:
+ 1. ioutil.WriteFile("person.json", data, 0644): This line writes the JSON data to a file named "person.json". Any error during file writing is handled and wrapped.
+
+
+Modal A:
+  Bad
+1. xml.MarshalIndent(person, "", "  "): This line marshals the Person struct into XML data with indentation. If there's an error during marshalling, it will be returned and wrapped with a new error. -> provide indentation without requested
+2. Providing too much of repeatative content
+
+
+1. BOTH Model didn't mentiond 'package main' at the top of the import statement
+2. Model-A imported os package which is not used it means that code will not compile
+3. Modal-B has complie code for `data = []byte(xml.Header) + data`
