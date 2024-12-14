@@ -8,13 +8,17 @@ import (
 )
 
 func main() {
+
+	// create a custom http client with retryRoundTripper
 	c := &http.Client{
 		Transport: &retryRoundTripper{
-			defaultRoundTripper: http.DefaultTransport,
-			maxRetries:          5,
-			delay:               1,
+			defaultRoundTripper: http.DefaultTransport, // default http client
+			maxRetries:          5,                     // number of retries
+			delay:               1,                     // used for exponential backoff
 		},
 	}
+
+	// creating a new request to call client
 	req, err := http.NewRequest(http.MethodGet, "http://localhost:9000", nil)
 	if err != nil {
 		log.Fatal(err)
@@ -28,11 +32,14 @@ func main() {
 	}
 	defer res.Body.Close()
 
+	// reading resposne body
 	body, err := io.ReadAll(res.Body)
 	if err != nil {
 		log.Fatal(err)
 		return
 	}
+
+	// printing logs
 	log.Println("statusCode: ", res.StatusCode)
 	log.Println("response Body: ", string(body))
 }
@@ -47,6 +54,7 @@ func (rr retryRoundTripper) RoundTrip(r *http.Request) (*http.Response, error) {
 	var attempts int
 	var backOff time.Duration
 	for {
+		// calling the http client
 		res, err := rr.defaultRoundTripper.RoundTrip(r)
 		attempts++
 
@@ -62,14 +70,14 @@ func (rr retryRoundTripper) RoundTrip(r *http.Request) (*http.Response, error) {
 			return res, err
 		}
 
-		backOff = time.Duration(rr.delay) * time.Second
-		rr.delay *= 2 // backingOff by power of 2
+		backOff = time.Duration(rr.delay) * time.Second // assuming delay in second
+		rr.delay *= 2                                   // backingOff by power of 2
 
 		// delay and retry
 		select {
 		case <-r.Context().Done():
 			return res, r.Context().Err()
-		case <-time.After(backOff):
+		case <-time.After(backOff): // waiting till backOff duration
 		}
 	}
 }
