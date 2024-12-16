@@ -1,5 +1,7 @@
 package main
 
+/*
+
 import (
 	"fmt"
 	"testing"
@@ -50,3 +52,4 @@ func main() {
 	totalMock := ProcessData(MockDataSource)
 	fmt.Printf("Total from MockDataSource: %d\n", totalMock)
 }
+*/
