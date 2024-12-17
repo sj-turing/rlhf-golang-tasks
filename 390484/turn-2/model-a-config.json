@@ -1,0 +1,5 @@
+{
+  "port": "8080",
+  "db_url": "postgres://username:password@localhost:5432/mydatabase",
+  "log_level": "info"
+}
