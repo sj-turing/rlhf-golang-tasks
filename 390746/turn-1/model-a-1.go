@@ -1,6 +1,5 @@
 package main
 
-/*
 import (
 	"crypto/aes"
 	"crypto/cipher"
@@ -52,4 +51,3 @@ func main() {
 	log.Printf("Encrypted Data: %s", encrypted)
 	// Save 'key' securely (e.g., environment variable, secure vault, etc.)
 }
-*/
