@@ -1,60 +1,44 @@
 package main
 
-/*
-
 import (
 	"fmt"
-	"io/ioutil"
-	"net/http"
+	"math/rand"
 	"sync"
+	"time"
 )
 
-// FetchURL fetches the content from the given URL and sends the result to the results channel
-func FetchURL(url string, wg *sync.WaitGroup, results chan<- string) {
-	defer wg.Done() // Notify that this goroutine is done
-	resp, err := http.Get(url)
-	if err != nil {
-		results <- fmt.Sprintf("Failed to fetch %s: %v", url, err)
-		return
-	}
-	defer resp.Body.Close() // Ensure that the response body is closed
+// Simulating a data fetching function
+func fetchData(id int, wg *sync.WaitGroup, results chan<- string) {
+	defer wg.Done() // Mark this goroutine as done
 
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		results <- fmt.Sprintf("Failed to read response from %s: %v", url, err)
-		return
-	}
-
-	results <- fmt.Sprintf("Fetched %s: %d bytes", url, len(body))
+	// Simulate a random delay for fetching data
+	time.Sleep(time.Duration(rand.Intn(3)+1) * time.Second)
+	result := fmt.Sprintf("Result from source %d", id)
+	results <- result // Send the result back to the results channel
 }
 
 func main() {
-	urls := []string{
-		"https://www.example.com",
-		"https://www.google.com",
-		"https://www.github.com",
-		"https://www.reddit.com",
-	}
+	const numFetchers = 5
 
 	var wg sync.WaitGroup
-	results := make(chan string, len(urls)) // Buffered channel to hold results
+	results := make(chan string, numFetchers) // Buffered channel to hold results
 
-	// Start goroutines for each URL
-	for _, url := range urls {
-		wg.Add(1) // Increment wait group counter
-		go FetchURL(url, &wg, results)
+	// Start multiple goroutines to fetch data
+	for i := 1; i <= numFetchers; i++ {
+		wg.Add(1)                     // Increment the WaitGroup counter
+		go fetchData(i, &wg, results) // Launch the fetchData goroutine
 	}
 
-	// Wait for all goroutines to finish
+	// Close the results channel once all fetchers are done
 	go func() {
-		wg.Wait()
-		close(results) // Close the channel once all goroutines are done
+		wg.Wait()      // Wait for all fetchers to complete
+		close(results) // Close the results channel
 	}()
 
-	// Process results as they come in
+	// Process the results as they come in
 	for result := range results {
-		fmt.Println(result)
+		fmt.Println(result) // Process each result (in this case, just print it)
 	}
-}
 
-*/
+	fmt.Println("All data fetched and processed!")
+}

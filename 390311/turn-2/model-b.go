@@ -1,83 +1,88 @@
 package main
 
-/*
-
 import (
-	"context"
 	"fmt"
-	"io/ioutil"
-	"net/http"
 	"sync"
 	"time"
 )
 
-// FetchData fetches data from a given URL
-func FetchData(ctx context.Context, url string, wg *sync.WaitGroup, results chan<- string) {
-	defer wg.Done()
-
-	select {
-	case <-ctx.Done():
-		fmt.Printf("Fetching %s cancelled\n", url)
-		return
-	default:
-	}
-
-	fmt.Printf("Fetching %s...\n", url)
-	time.Sleep(time.Duration(rand.Intn(500)) * time.Millisecond) // Simulate network latency
-
-	resp, err := http.Get(url)
-	if err != nil {
-		fmt.Printf("Error fetching %s: %v\n", url, err)
-		return
-	}
-	defer resp.Body.Close()
-
-	data, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		fmt.Printf("Error reading response from %s: %v\n", url, err)
-		return
-	}
-
-	results <- string(data)
+// DataFetcher represents the fetched data
+type DataFetcher interface {
+	Fetch() (string, error) // Fetch data and return it along with an error
 }
 
-// ProcessData processes the fetched data
-func ProcessData(results <-chan string, wg *sync.WaitGroup) {
-	defer wg.Done()
+// SimpleFetcher implements DataFetcher for demonstration
+type SimpleFetcher struct {
+	id int
+}
 
-	for data := range results {
-		fmt.Printf("Processing data:\n%s\n", data)
-		time.Sleep(time.Duration(rand.Intn(200)) * time.Millisecond) // Simulate processing time
+func (f *SimpleFetcher) Fetch() (string, error) {
+	time.Sleep(time.Duration(rand.Intn(5)) * time.Second) // Simulate fetch delay
+	return fmt.Sprintf("Data from source %d", f.id), nil
+}
+
+// DataProcessor processes the fetched data
+type DataProcessor interface {
+	Process(data string)
+}
+
+// SimpleProcessor implements DataProcessor for demonstration
+type SimpleProcessor struct {
+	mu sync.Mutex // Lock for safe concurrent printing
+}
+
+func (p *SimpleProcessor) Process(data string) {
+	p.mu.Lock()
+	defer p.mu.Unlock()
+	fmt.Println("Processing:", data)
+}
+
+// FetchData fetches data asynchronously
+func FetchData(fetcher DataFetcher, result chan<- string, wg *sync.WaitGroup) {
+	defer wg.Done()
+	data, err := fetcher.Fetch()
+	if err != nil {
+		fmt.Println("Error fetching data:", err)
+		return
+	}
+	result <- data // Send the fetched data to the result channel
+}
+
+// ProcessData processes data concurrently
+func ProcessData(processor DataProcessor, result chan string) {
+	for data := range result {
+		processor.Process(data) // Process the data
 	}
 }
 
 func main() {
-	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
-	defer cancel()
-
 	var wg sync.WaitGroup
-	results := make(chan string)
+	result := make(chan string) // Unbuffered channel for data processing
 
-	urls := []string{
-		"https://example.com/data1",
-		"https://example.com/data2",
-		"https://example.com/data3",
-		"https://example.com/data4",
+	// Number of fetchers and processors
+	numFetchers := 10
+	numProcessors := 3
+
+	// Create fetchers
+	fetchers := make([]DataFetcher, numFetchers)
+	for i := 0; i < numFetchers; i++ {
+		fetchers[i] = &SimpleFetcher{id: i + 1}
 	}
 
-	// Start fetching goroutines
-	for _, url := range urls {
+	// Create processors
+	processors := make([]*SimpleProcessor, numProcessors)
+	for i := 0; i < numProcessors; i++ {
+		processors[i] = &SimpleProcessor{}
+		go ProcessData(processors[i], result) // Start processor goroutines
+	}
+
+	// Start fetching data
+	for _, fetcher := range fetchers {
 		wg.Add(1)
-		go FetchData(ctx, url, &wg, results)
+		go FetchData(fetcher, result, &wg) // Start fetcher goroutines
 	}
 
-	// Start processing goroutine
-	wg.Add(1)
-	go ProcessData(results, &wg)
-
-	// Wait for all goroutines to finish
+	// Wait for all fetch operations to complete
 	wg.Wait()
-
-	fmt.Println("All tasks completed.")
+	close(result) // Close the result channel to signal processors to stop
 }
-*/

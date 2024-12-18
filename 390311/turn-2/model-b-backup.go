@@ -1,10 +1,11 @@
 package main
 
+/*
+
 import (
 	"context"
 	"fmt"
 	"io/ioutil"
-	"math/rand"
 	"net/http"
 	"sync"
 	"time"
@@ -42,6 +43,8 @@ func FetchData(ctx context.Context, url string, wg *sync.WaitGroup, results chan
 
 // ProcessData processes the fetched data
 func ProcessData(results <-chan string, wg *sync.WaitGroup) {
+	defer wg.Done()
+
 	for data := range results {
 		fmt.Printf("Processing data:\n%s\n", data)
 		time.Sleep(time.Duration(rand.Intn(200)) * time.Millisecond) // Simulate processing time
@@ -68,6 +71,8 @@ func main() {
 		go FetchData(ctx, url, &wg, results)
 	}
 
+	// Start processing goroutine
+	wg.Add(1)
 	go ProcessData(results, &wg)
 
 	// Wait for all goroutines to finish
@@ -75,3 +80,4 @@ func main() {
 
 	fmt.Println("All tasks completed.")
 }
+*/
