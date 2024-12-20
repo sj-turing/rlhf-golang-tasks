@@ -1,7 +1,5 @@
 package main
 
-/*
-
 import (
 	"fmt"
 	"sync"
@@ -34,4 +32,3 @@ func main() {
 	// Print the final counter value
 	fmt.Println("Final counter value:", counter)
 }
-*/
