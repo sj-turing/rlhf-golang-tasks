@@ -1,0 +1,5 @@
+db:
+  username: "temp"
+  password: "temp"
+  host: "localhost"
+  name: "mydb"
