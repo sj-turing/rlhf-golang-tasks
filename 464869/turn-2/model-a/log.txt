@@ -1,0 +1,5 @@
+{"message":"Debug message","time":"2024-12-20T13:24:16+05:30","level":"debug","requestId":"request-123","sessionId":"session-456"}
+{"message":"Info message","time":"2024-12-20T13:24:16+05:30","level":"info","requestId":"request-123","sessionId":"session-456"}
+{"message":"Warn message","time":"2024-12-20T13:24:16+05:30","level":"warn","requestId":"request-123","sessionId":"session-456"}
+{"message":"Error message","time":"2024-12-20T13:24:16+05:30","level":"error","requestId":"request-123","sessionId":"session-456"}
+{"message":"Fatal message","time":"2024-12-20T13:24:16+05:30","level":"fatal","requestId":"request-123","sessionId":"session-456"}
