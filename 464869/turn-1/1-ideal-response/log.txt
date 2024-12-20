@@ -1,0 +1,5 @@
+{"message":"Debug message","time":"2024-12-20T12:58:33+05:30","level":"debug"}
+{"message":"Info message","time":"2024-12-20T12:58:33+05:30","level":"info"}
+{"message":"Warn message","time":"2024-12-20T12:58:33+05:30","level":"warn"}
+{"message":"Error message","time":"2024-12-20T12:58:33+05:30","level":"error"}
+{"message":"Fatal message","time":"2024-12-20T12:58:33+05:30","level":"fatal"}
