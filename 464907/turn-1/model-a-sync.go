@@ -1,6 +1,5 @@
 package main
 
-/*
 import (
 	"fmt"
 )
@@ -18,4 +17,3 @@ func syncFunction(callback func()) {
 	fmt.Println("Doing some synchronous work...")
 	callback() // Call the callback
 }
-*/
