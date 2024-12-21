@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 func nextPowerOfTwo(n uint) uint {
@@ -31,7 +30,8 @@ func resizeSlice(s []int, newCap uint) []int {
 
 func main() {
 	s := []int{1, 2, 3}
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 35; i++ {
+		fmt.Println("size: ", cap(s))
 		s = resizeSlice(s, uint(len(s))+1)
 		s = append(s, i)
 	}
