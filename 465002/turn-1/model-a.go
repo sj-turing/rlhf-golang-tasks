@@ -1,7 +1,5 @@
 package main
 
-/*
-
 import (
 	"context"
 	"fmt"
@@ -51,4 +49,3 @@ func main() {
 	fmt.Println("Server is running at http://localhost:8080/readfile")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
-*/
