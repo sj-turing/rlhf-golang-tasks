@@ -1,7 +1,5 @@
 package main
 
-/*
-
 import (
 	"context"
 	"fmt"
@@ -10,11 +8,18 @@ import (
 	"time"
 )
 
+// task is structure to hold task related information
+type task struct {
+	ID   int
+	Name string
+	fn   func(context.Context)
+}
+
 // WorkerPool is a structure to manage a pool of workers
 type WorkerPool struct {
 	workers        int
 	wg             sync.WaitGroup
-	taskChan       chan func(context.Context)
+	taskChan       chan task
 	shutdownSignal chan struct{}
 }
 
@@ -22,7 +27,7 @@ type WorkerPool struct {
 func NewWorkerPool(workers int) *WorkerPool {
 	return &WorkerPool{
 		workers:        workers,
-		taskChan:       make(chan func(context.Context)),
+		taskChan:       make(chan task),
 		shutdownSignal: make(chan struct{}),
 	}
 }
@@ -36,6 +41,7 @@ func (pool *WorkerPool) Start() {
 
 // worker is the main function that each worker goroutine executes
 func (pool *WorkerPool) worker() {
+	ctx := context.Background()
 	for {
 		select {
 		case task, ok := <-pool.taskChan:
@@ -43,7 +49,9 @@ func (pool *WorkerPool) worker() {
 				return // shutdown signal received
 			}
 			pool.wg.Add(1)
-			task(context.Background())
+			ctx = context.WithValue(ctx, "taskID", task.ID)
+			ctx = context.WithValue(ctx, "taskName", task.Name)
+			task.fn(ctx)
 			pool.wg.Done()
 		case <-pool.shutdownSignal:
 			return // shutdown signal received
@@ -52,9 +60,9 @@ func (pool *WorkerPool) worker() {
 }
 
 // Submit adds a task to the pool
-func (pool *WorkerPool) Submit(task func(context.Context)) {
+func (pool *WorkerPool) Submit(scheduleTask task) {
 	select {
-	case pool.taskChan <- task:
+	case pool.taskChan <- scheduleTask:
 	default:
 		fmt.Println("[ERROR] Worker pool is full, unable to submit task")
 	}
@@ -67,16 +75,11 @@ func (pool *WorkerPool) Shutdown() {
 	close(pool.shutdownSignal)
 }
 
-// AsyncTask executes a task asynchronously in the worker pool with a unique context
-func AsyncTask(ctx context.Context, taskID int, taskName string) {
-	// Extract the unique identifier from the context
-	taskIDStr, ok := ctx.Value("taskID").(string)
-	if !ok {
-		panic("taskID not found in context")
-	}
+// AsyncTask executes a task asynchronously in the worker pool with a unique identifier
+func AsyncTask(workerPool *WorkerPool, taskID int, taskName string) {
 
 	startTime := time.Now()
-	fmt.Printf("[DEBUG] %s-%s: Task started at %s\n", taskName, taskIDStr, startTime)
+	fmt.Printf("[DEBUG] %s-%d: Task started at %s\n", taskName, taskID, startTime)
 
 	// Simulate some work
 	time.Sleep(time.Duration(int64(taskID)%2) * time.Second)
@@ -84,11 +87,20 @@ func AsyncTask(ctx context.Context, taskID int, taskName string) {
 	endTime := time.Now()
 	executionTime := endTime.Sub(startTime)
 
-	// Submit the logger task to the worker pool
-	workerPool.Submit(func(ctx context.Context) {
+	scheduleTask := task{ID: taskID, Name: taskName, fn: func(ctx context.Context) {
 		defer atomic.AddInt64(&completedTasks, 1)
-		fmt.Printf("[INFO] %s-%s: Task completed in %s\n", taskName, taskIDStr, executionTime)
-	})
+
+		// getting taskID from the context
+		taskID := ctx.Value("taskID").(int)
+
+		// getting taskName  from the context
+		taskName := ctx.Value("taskName").(string)
+
+		fmt.Printf("[INFO] %s-%d: Task completed in %s\n", taskName, taskID, executionTime)
+
+	}}
+
+	workerPool.Submit(scheduleTask)
 }
 
 var completedTasks int64
@@ -112,4 +124,13 @@ func main() {
 	for taskID := 1; taskID <= numTasks; taskID++ {
 		go func(taskID int) {
 			defer wg.Done()
-*/
+			AsyncTask(workerPool, taskID, taskName)
+		}(taskID)
+	}
+
+	// Wait for all tasks to complete
+	wg.Wait()
+
+	fmt.Printf("[INFO] Total completed tasks: %d\n", atomic.LoadInt64(&completedTasks))
+	fmt.Println("[INFO] All tasks have completed in the worker pool.")
+}
