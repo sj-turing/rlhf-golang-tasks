@@ -9,14 +9,12 @@ import (
 	"time"
 )
 
-// File interface defines the basic file operations.
 type File interface {
 	io.Reader
 	io.Writer
 	Close() error
 }
 
-// BasicFile implements the File interface using the os package.
 type BasicFile struct {
 	path string
 	f    *os.File
@@ -49,10 +47,8 @@ func (b *BasicFile) Close() error {
 	return b.f.Close()
 }
 
-// VersionedFile is a decorator that tracks historical changes of a BasicFile.
 type VersionedFile struct {
 	File
-	mu      sync.Mutex
 	history []string
 }
 
@@ -61,7 +57,7 @@ func NewVersionedFile(path string) (*VersionedFile, error) {
 	if err != nil {
 		return nil, err
 	}
-	return &VersionedFile{File: f, mu: sync.Mutex{}}, nil
+	return &VersionedFile{File: f}, nil
 }
 
 func (v *VersionedFile) Write(p []byte) (int, error) {
@@ -69,20 +65,34 @@ func (v *VersionedFile) Write(p []byte) (int, error) {
 	if err != nil {
 		return n, err
 	}
-	// After writing, add the current content to history
 	content, err := ioutil.ReadFile(v.File.(*BasicFile).path)
 	if err != nil {
 		return n, err
 	}
-
-	v.mu.Lock()
 	v.history = append(v.history, string(content))
-	v.mu.Unlock()
 	return n, nil
 }
 
 func (v *VersionedFile) GetHistory() []string {
-	v.mu.Lock()
-	defer v.mu.Unlock()
 	return v.history
 }
+
+func WithVersioning(f File) File {  
+    return &VersionedFile{File: f}
+}
+
+func main() {  
+    filePath := "test.txt"
+    f, err := NewBasicFile(filePath)
+    if err != nil {
+        fmt.Println("Error opening file:", err)
+        return
+    }
+    defer f.Close()
+    // Decorate the basic file with versioning
+    vf := WithVersioning(f)
+    vf.Write([]byte("Initial content\n"))
+    // Perform concurrent modifications
+    go func() {  
+        for i := 0; i < 5; i++ {
+            vf.Write([]byte(fmt.Sprintf("Modification %d\n", i)))
