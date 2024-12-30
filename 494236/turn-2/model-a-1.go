@@ -1,7 +1,5 @@
 package main
 
-/*
-
 import (
 	"fmt"
 	"time"
@@ -26,4 +24,3 @@ func main() {
 		processChunk(chunk)
 	}
 }
-*/
