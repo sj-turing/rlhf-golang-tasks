@@ -1,150 +1,20 @@
-{user5 Weather for user user5: Sunny 2024-12-30 19:48:09.741644 +0530 IST m=+0.000331376}
-{user2 Weather for user user2: Sunny 2024-12-30 19:48:09.741665 +0530 IST m=+0.000353084}
-{user4 Weather for user user4: Sunny 2024-12-30 19:48:09.741671 +0530 IST m=+0.000358209}
-{user1 Weather for user user1: Cloudy 2024-12-30 19:48:09.741759 +0530 IST m=+0.000446459}
-{user3 Weather for user user3: Snowy 2024-12-30 19:48:09.741788 +0530 IST m=+0.000475626}
-{user5 Weather for user user5: Snowy 2024-12-30 19:48:10.747281 +0530 IST m=+1.005967501}
-{user2 Weather for user user2: Sunny 2024-12-30 19:48:10.750326 +0530 IST m=+1.009012043}
-{user4 Weather for user user4: Sunny 2024-12-30 19:48:10.752409 +0530 IST m=+1.011095459}
-{user1 Weather for user user1: Rainy 2024-12-30 19:48:10.75449 +0530 IST m=+1.013176293}
-{user3 Weather for user user3: Thunderstorm 2024-12-30 19:48:10.762587 +0530 IST m=+1.021273418}
-{user5 Weather for user user5: Thunderstorm 2024-12-30 19:48:11.753482 +0530 IST m=+2.012167168}
-{user4 Weather for user user4: Thunderstorm 2024-12-30 19:48:11.760968 +0530 IST m=+2.019653001}
-{user2 Weather for user user2: Rainy 2024-12-30 19:48:11.761158 +0530 IST m=+2.019842459}
-{user1 Weather for user user1: Cloudy 2024-12-30 19:48:11.768784 +0530 IST m=+2.027468459}
-{user3 Weather for user user3: Snowy 2024-12-30 19:48:11.772427 +0530 IST m=+2.031111959}
-{user5 Weather for user user5: Snowy 2024-12-30 19:48:12.75823 +0530 IST m=+3.016913918}
-{user4 Weather for user user4: Sunny 2024-12-30 19:48:12.770375 +0530 IST m=+3.029058084}
-{user2 Weather for user user2: Sunny 2024-12-30 19:48:12.774045 +0530 IST m=+3.032728168}
-{user3 Weather for user user3: Sunny 2024-12-30 19:48:12.778874 +0530 IST m=+3.037557459}
-{user1 Weather for user user1: Thunderstorm 2024-12-30 19:48:12.778878 +0530 IST m=+3.037561126}
-{user5 Weather for user user5: Cloudy 2024-12-30 19:48:13.76244 +0530 IST m=+4.021122418}
-{user4 Weather for user user4: Thunderstorm 2024-12-30 19:48:13.782265 +0530 IST m=+4.040947543}
-{user2 Weather for user user2: Sunny 2024-12-30 19:48:13.782739 +0530 IST m=+4.041421293}
-{user3 Weather for user user3: Rainy 2024-12-30 19:48:13.785321 +0530 IST m=+4.044003584}
-{user1 Weather for user user1: Thunderstorm 2024-12-30 19:48:13.788881 +0530 IST m=+4.047563626}
-{user5 Weather for user user5: Sunny 2024-12-30 19:48:14.787399 +0530 IST m=+5.046079918}
-{user4 Weather for user user4: Sunny 2024-12-30 19:48:14.789133 +0530 IST m=+5.047814251}
-{user2 Weather for user user2: Thunderstorm 2024-12-30 19:48:14.797886 +0530 IST m=+5.056566626}
-{user3 Weather for user user3: Cloudy 2024-12-30 19:48:14.802086 +0530 IST m=+5.060766584}
-{user1 Weather for user user1: Cloudy 2024-12-30 19:48:14.806102 +0530 IST m=+5.064783293}
-{user5 Weather for user user5: Snowy 2024-12-30 19:48:15.793169 +0530 IST m=+6.051848959}
-{user2 Weather for user user2: Rainy 2024-12-30 19:48:15.802205 +0530 IST m=+6.060884626}
-{user4 Weather for user user4: Sunny 2024-12-30 19:48:15.797268 +0530 IST m=+6.055947501}
-{user3 Weather for user user3: Sunny 2024-12-30 19:48:15.804538 +0530 IST m=+6.063217209}
-{user1 Weather for user user1: Snowy 2024-12-30 19:48:15.815585 +0530 IST m=+6.074264043}
-{user5 Weather for user user5: Thunderstorm 2024-12-30 19:48:16.803283 +0530 IST m=+7.061961334}
-{user2 Weather for user user2: Rainy 2024-12-30 19:48:16.806243 +0530 IST m=+7.064921251}
-{user4 Weather for user user4: Thunderstorm 2024-12-30 19:48:16.810549 +0530 IST m=+7.069227376}
-{user3 Weather for user user3: Cloudy 2024-12-30 19:48:16.816054 +0530 IST m=+7.074732043}
-{user1 Weather for user user1: Snowy 2024-12-30 19:48:16.818558 +0530 IST m=+7.077236001}
-{user5 Weather for user user5: Thunderstorm 2024-12-30 19:48:17.809131 +0530 IST m=+8.067808209}
-{user2 Weather for user user2: Thunderstorm 2024-12-30 19:48:17.813618 +0530 IST m=+8.072295209}
-{user4 Weather for user user4: Rainy 2024-12-30 19:48:17.816997 +0530 IST m=+8.075674043}
-{user3 Weather for user user3: Sunny 2024-12-30 19:48:17.821186 +0530 IST m=+8.079863126}
-{user1 Weather for user user1: Sunny 2024-12-30 19:48:17.82375 +0530 IST m=+8.082426959}
-{user5 Weather for user user5: Cloudy 2024-12-30 19:48:18.814668 +0530 IST m=+9.073343084}
-{user2 Weather for user user2: Snowy 2024-12-30 19:48:18.822091 +0530 IST m=+9.080766001}
-{user4 Weather for user user4: Cloudy 2024-12-30 19:48:18.825244 +0530 IST m=+9.083919168}
-{user3 Weather for user user3: Snowy 2024-12-30 19:48:18.829373 +0530 IST m=+9.088048293}
-{user1 Weather for user user1: Sunny 2024-12-30 19:48:18.832338 +0530 IST m=+9.091013793}
-{user1 Weather for user user1: Thunderstorm 2024-12-30 19:53:54.945422 +0530 IST m=+0.000589751}
-{user4 Weather for user user4: Sunny 2024-12-30 19:53:54.945487 +0530 IST m=+0.000654168}
-{user3 Weather for user user3: Thunderstorm 2024-12-30 19:53:54.945523 +0530 IST m=+0.000690418}
-{user2 Weather for user user2: Snowy 2024-12-30 19:53:54.945531 +0530 IST m=+0.000698376}
-{user5 Weather for user user5: Cloudy 2024-12-30 19:53:54.945542 +0530 IST m=+0.000709626}
-{user1 Weather for user user1: Cloudy 2024-12-30 19:53:55.956704 +0530 IST m=+1.011870251}
-{user4 Weather for user user4: Snowy 2024-12-30 19:53:55.957353 +0530 IST m=+1.012518626}
-{user3 Weather for user user3: Thunderstorm 2024-12-30 19:53:55.962482 +0530 IST m=+1.017648376}
-{user2 Weather for user user2: Snowy 2024-12-30 19:53:55.962557 +0530 IST m=+1.017723251}
-{user5 Weather for user user5: Rainy 2024-12-30 19:53:55.963004 +0530 IST m=+1.018169668}
-{user1 Weather for user user1: Sunny 2024-12-30 19:53:56.970994 +0530 IST m=+2.026158710}
-{user4 Weather for user user4: Thunderstorm 2024-12-30 19:53:56.975659 +0530 IST m=+2.030824460}
-{user3 Weather for user user3: Rainy 2024-12-30 19:53:56.98482 +0530 IST m=+2.039984210}
-{user2 Weather for user user2: Sunny 2024-12-30 19:53:56.993964 +0530 IST m=+2.049128585}
-{user5 Weather for user user5: Cloudy 2024-12-30 19:53:56.998025 +0530 IST m=+2.053189835}
-{user1 Weather for user user1: Cloudy 2024-12-30 19:53:57.979952 +0530 IST m=+3.035115543}
-{user4 Weather for user user4: Snowy 2024-12-30 19:53:57.983859 +0530 IST m=+3.039021835}
-{user3 Weather for user user3: Rainy 2024-12-30 19:53:57.992329 +0530 IST m=+3.047491876}
-{user2 Weather for user user2: Snowy 2024-12-30 19:53:57.997912 +0530 IST m=+3.053075168}
-{user5 Weather for user user5: Sunny 2024-12-30 19:53:58.008576 +0530 IST m=+3.063739668}
-{user1 Weather for user user1: Sunny 2024-12-30 19:53:58.984392 +0530 IST m=+4.039554418}
-{user4 Weather for user user4: Sunny 2024-12-30 19:53:58.987564 +0530 IST m=+4.042725710}
-{user3 Weather for user user3: Thunderstorm 2024-12-30 19:53:58.998763 +0530 IST m=+4.053925251}
-{user2 Weather for user user2: Sunny 2024-12-30 19:53:59.002665 +0530 IST m=+4.057826793}
-{user5 Weather for user user5: Rainy 2024-12-30 19:53:59.022415 +0530 IST m=+4.077576668}
-{user1 Weather for user user1: Rainy 2024-12-30 19:53:59.990831 +0530 IST m=+5.045991543}
-{user3 Weather for user user3: Sunny 2024-12-30 19:54:00.012372 +0530 IST m=+5.067532460}
-{user4 Weather for user user4: Sunny 2024-12-30 19:54:00.01239 +0530 IST m=+5.067550418}
-{user2 Weather for user user2: Thunderstorm 2024-12-30 19:54:00.012394 +0530 IST m=+5.067554793}
-{user5 Weather for user user5: Sunny 2024-12-30 19:54:00.039916 +0530 IST m=+5.095076043}
-{user1 Weather for user user1: Snowy 2024-12-30 19:54:00.996949 +0530 IST m=+6.052107960}
-{user4 Weather for user user4: Snowy 2024-12-30 19:54:01.018387 +0530 IST m=+6.073546251}
-{user3 Weather for user user3: Sunny 2024-12-30 19:54:01.01913 +0530 IST m=+6.074289293}
-{user2 Weather for user user2: Snowy 2024-12-30 19:54:01.019156 +0530 IST m=+6.074315418}
-{user5 Weather for user user5: Snowy 2024-12-30 19:54:01.042842 +0530 IST m=+6.098001668}
-{user1 Weather for user user1: Sunny 2024-12-30 19:54:02.006942 +0530 IST m=+7.062100251}
-{user4 Weather for user user4: Sunny 2024-12-30 19:54:02.024382 +0530 IST m=+7.079540210}
-{user3 Weather for user user3: Sunny 2024-12-30 19:54:02.026609 +0530 IST m=+7.081766710}
-{user2 Weather for user user2: Rainy 2024-12-30 19:54:02.033043 +0530 IST m=+7.088200501}
-{user5 Weather for user user5: Sunny 2024-12-30 19:54:02.048708 +0530 IST m=+7.103865835}
-{user1 Weather for user user1: Rainy 2024-12-30 19:54:03.010598 +0530 IST m=+8.065754876}
-{user4 Weather for user user4: Cloudy 2024-12-30 19:54:03.030577 +0530 IST m=+8.085733501}
-{user3 Weather for user user3: Snowy 2024-12-30 19:54:03.03409 +0530 IST m=+8.089246376}
-{user2 Weather for user user2: Rainy 2024-12-30 19:54:03.038029 +0530 IST m=+8.093185918}
-{user5 Weather for user user5: Rainy 2024-12-30 19:54:03.052192 +0530 IST m=+8.107348251}
-{user1 Weather for user user1: Sunny 2024-12-30 19:54:04.014451 +0530 IST m=+9.069605918}
-{user4 Weather for user user4: Thunderstorm 2024-12-30 19:54:04.036686 +0530 IST m=+9.091841501}
-{user3 Weather for user user3: Sunny 2024-12-30 19:54:04.040801 +0530 IST m=+9.095955835}
-{user2 Weather for user user2: Thunderstorm 2024-12-30 19:54:04.046661 +0530 IST m=+9.101815960}
-{user5 Weather for user user5: Snowy 2024-12-30 19:54:04.061606 +0530 IST m=+9.116760626}
-{user1 Weather for user user1: Cloudy 2024-12-30 19:58:04.283242 +0530 IST m=+0.000494667}
-{user4 Weather for user user4: Rainy 2024-12-30 19:58:04.283272 +0530 IST m=+0.000524167}
-{user2 Weather for user user2: Sunny 2024-12-30 19:58:04.283302 +0530 IST m=+0.000554292}
-{user3 Weather for user user3: Cloudy 2024-12-30 19:58:04.283338 +0530 IST m=+0.000590876}
-{user5 Weather for user user5: Snowy 2024-12-30 19:58:04.283401 +0530 IST m=+0.000653167}
-{user1 Weather for user user1: Snowy 2024-12-30 19:58:05.296611 +0530 IST m=+1.013861876}
-{user4 Weather for user user4: Snowy 2024-12-30 19:58:05.297906 +0530 IST m=+1.015156751}
-{user2 Weather for user user2: Sunny 2024-12-30 19:58:05.298824 +0530 IST m=+1.016074834}
-{user3 Weather for user user3: Thunderstorm 2024-12-30 19:58:05.299254 +0530 IST m=+1.016504667}
-{user5 Weather for user user5: Rainy 2024-12-30 19:58:05.300315 +0530 IST m=+1.017566501}
-{user1 Weather for user user1: Thunderstorm 2024-12-30 19:58:06.302788 +0530 IST m=+2.020037417}
-{user4 Weather for user user4: Snowy 2024-12-30 19:58:06.319875 +0530 IST m=+2.037124542}
-{user2 Weather for user user2: Thunderstorm 2024-12-30 19:58:06.321818 +0530 IST m=+2.039068251}
-{user3 Weather for user user3: Snowy 2024-12-30 19:58:06.333519 +0530 IST m=+2.050768751}
-{user5 Weather for user user5: Rainy 2024-12-30 19:58:06.335439 +0530 IST m=+2.052689292}
-{user1 Weather for user user1: Snowy 2024-12-30 19:58:07.308492 +0530 IST m=+3.025740709}
-{user4 Weather for user user4: Sunny 2024-12-30 19:58:07.330024 +0530 IST m=+3.047271917}
-{user2 Weather for user user2: Thunderstorm 2024-12-30 19:58:07.334739 +0530 IST m=+3.051987584}
-{user3 Weather for user user3: Rainy 2024-12-30 19:58:07.349706 +0530 IST m=+3.066954084}
-{user5 Weather for user user5: Cloudy 2024-12-30 19:58:07.35069 +0530 IST m=+3.067938167}
-{user1 Weather for user user1: Cloudy 2024-12-30 19:58:08.314298 +0530 IST m=+4.031545042}
-{user4 Weather for user user4: Thunderstorm 2024-12-30 19:58:08.341578 +0530 IST m=+4.058825459}
-{user2 Weather for user user2: Thunderstorm 2024-12-30 19:58:08.343196 +0530 IST m=+4.060442709}
-{user3 Weather for user user3: Sunny 2024-12-30 19:58:08.354663 +0530 IST m=+4.071910126}
-{user5 Weather for user user5: Snowy 2024-12-30 19:58:08.356196 +0530 IST m=+4.073442709}
-{user1 Weather for user user1: Sunny 2024-12-30 19:58:09.320755 +0530 IST m=+5.038001001}
-{user4 Weather for user user4: Snowy 2024-12-30 19:58:09.347283 +0530 IST m=+5.064528709}
-{user2 Weather for user user2: Snowy 2024-12-30 19:58:09.348787 +0530 IST m=+5.066032792}
-{user3 Weather for user user3: Sunny 2024-12-30 19:58:09.362508 +0530 IST m=+5.079753292}
-{user5 Weather for user user5: Thunderstorm 2024-12-30 19:58:09.36373 +0530 IST m=+5.080975417}
-{user1 Weather for user user1: Cloudy 2024-12-30 19:58:10.329948 +0530 IST m=+6.047192292}
-{user4 Weather for user user4: Thunderstorm 2024-12-30 19:58:10.353864 +0530 IST m=+6.071108751}
-{user2 Weather for user user2: Cloudy 2024-12-30 19:58:10.358789 +0530 IST m=+6.076033709}
-{user3 Weather for user user3: Sunny 2024-12-30 19:58:10.369972 +0530 IST m=+6.087216709}
-{user5 Weather for user user5: Rainy 2024-12-30 19:58:10.369995 +0530 IST m=+6.087238917}
-{user1 Weather for user user1: Cloudy 2024-12-30 19:58:11.335425 +0530 IST m=+7.052667792}
-{user4 Weather for user user4: Snowy 2024-12-30 19:58:11.363688 +0530 IST m=+7.080930834}
-{user2 Weather for user user2: Rainy 2024-12-30 19:58:11.375473 +0530 IST m=+7.092716001}
-{user3 Weather for user user3: Cloudy 2024-12-30 19:58:11.377018 +0530 IST m=+7.094261417}
-{user5 Weather for user user5: Cloudy 2024-12-30 19:58:11.383318 +0530 IST m=+7.100560667}
-{user1 Weather for user user1: Rainy 2024-12-30 19:58:12.344773 +0530 IST m=+8.062015084}
-{user4 Weather for user user4: Rainy 2024-12-30 19:58:12.37665 +0530 IST m=+8.093891334}
-{user2 Weather for user user2: Sunny 2024-12-30 19:58:12.383822 +0530 IST m=+8.101063626}
-{user3 Weather for user user3: Thunderstorm 2024-12-30 19:58:12.388584 +0530 IST m=+8.105825542}
-{user5 Weather for user user5: Rainy 2024-12-30 19:58:12.391705 +0530 IST m=+8.108946626}
-{user1 Weather for user user1: Rainy 2024-12-30 19:58:13.353103 +0530 IST m=+9.070342834}
-{user4 Weather for user user4: Snowy 2024-12-30 19:58:13.398447 +0530 IST m=+9.115687542}
-{user2 Weather for user user2: Rainy 2024-12-30 19:58:13.400625 +0530 IST m=+9.117865084}
-{user3 Weather for user user3: Snowy 2024-12-30 19:58:13.411358 +0530 IST m=+9.128598417}
-{user5 Weather for user user5: Rainy 2024-12-30 19:58:13.420796 +0530 IST m=+9.138036584}
+{"user_id":"user10","message":"Message for user10","weather":"Weather for user 10: Snowy","timestamp":"2024-12-30T21:27:47.173266+05:30"}
+{"user_id":"user0","message":"Message for user0","weather":"Weather for user 0: Rainy","timestamp":"2024-12-30T21:27:47.173237+05:30"}
+{"user_id":"user11","message":"Message for user11","weather":"Weather for user 11: Rainy","timestamp":"2024-12-30T21:27:48.176235+05:30"}
+{"user_id":"user1","message":"Message for user1","weather":"Weather for user 1: Rainy","timestamp":"2024-12-30T21:27:48.177779+05:30"}
+{"user_id":"user12","message":"Message for user12","weather":"Weather for user 12: Thunderstorm","timestamp":"2024-12-30T21:27:49.177383+05:30"}
+{"user_id":"user2","message":"Message for user2","weather":"Weather for user 2: Snowy","timestamp":"2024-12-30T21:27:49.177884+05:30"}
+{"user_id":"user3","message":"Message for user3","weather":"Weather for user 3: Rainy","timestamp":"2024-12-30T21:27:50.178514+05:30"}
+{"user_id":"user13","message":"Message for user13","weather":"Weather for user 13: Cloudy","timestamp":"2024-12-30T21:27:50.178527+05:30"}
+{"user_id":"user4","message":"Message for user4","weather":"Weather for user 4: Cloudy","timestamp":"2024-12-30T21:27:51.179772+05:30"}
+{"user_id":"user14","message":"Message for user14","weather":"Weather for user 14: Cloudy","timestamp":"2024-12-30T21:27:51.180198+05:30"}
+{"user_id":"user5","message":"Message for user5","weather":"Weather for user 5: Cloudy","timestamp":"2024-12-30T21:27:52.180769+05:30"}
+{"user_id":"user15","message":"Message for user15","weather":"Weather for user 15: Rainy","timestamp":"2024-12-30T21:27:52.180794+05:30"}
+{"user_id":"user6","message":"Message for user6","weather":"Weather for user 6: Snowy","timestamp":"2024-12-30T21:27:53.181182+05:30"}
+{"user_id":"user16","message":"Message for user16","weather":"Weather for user 16: Cloudy","timestamp":"2024-12-30T21:27:53.181227+05:30"}
+{"user_id":"user7","message":"Message for user7","weather":"Weather for user 7: Snowy","timestamp":"2024-12-30T21:27:54.182279+05:30"}
+{"user_id":"user17","message":"Message for user17","weather":"Weather for user 17: Cloudy","timestamp":"2024-12-30T21:27:54.182302+05:30"}
+{"user_id":"user8","message":"Message for user8","weather":"Weather for user 8: Thunderstorm","timestamp":"2024-12-30T21:27:55.184084+05:30"}
+{"user_id":"user18","message":"Message for user18","weather":"Weather for user 18: Snowy","timestamp":"2024-12-30T21:27:55.184557+05:30"}
+{"user_id":"user9","message":"Message for user9","weather":"Weather for user 9: Cloudy","timestamp":"2024-12-30T21:27:56.185024+05:30"}
+{"user_id":"user19","message":"Message for user19","weather":"Weather for user 19: Snowy","timestamp":"2024-12-30T21:27:56.185039+05:30"}
