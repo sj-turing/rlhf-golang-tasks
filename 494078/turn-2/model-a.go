@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"log"
+	"math/rand"
 	"net/http"
-	"strconv"
 	"sync"
 	"time"
 )
@@ -68,11 +68,6 @@ func rateLimitMiddleware(next http.Handler, rateLimiter *RateLimiter) http.Handl
 // HTTP handler to process requests
 func processRequest(w http.ResponseWriter, r *http.Request) {
 	wg := &sync.WaitGroup{}
-	maxRequests := 10             // Define the rate limit
-	windowTime := 5 * time.Second // Define the rate limit window
-
-	rl := NewRateLimiter(maxRequests, windowTime)
-
 	start := time.Now()
 
 	// Allow 5 concurrent requests
