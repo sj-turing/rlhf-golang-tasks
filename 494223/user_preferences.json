@@ -1,5 +1,6 @@
 {
     "username": "johndoe",
     "theme": "dark",
-    "language": "español"
+    "language": "español",
+    "note": "Hello, ! This is a multilingual note."
 }
