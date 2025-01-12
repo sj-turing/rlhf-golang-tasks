@@ -23,7 +23,7 @@ type User struct {
 
 func main() {
 	// Open a database connection pool
-	db, err := sql.Open("postgres", "postgres://your_user:your_password@localhost/your_database?sslmode=disable")
+	db, err := sql.Open("postgres", "postgres://temp:temp@localhost/mydb?sslmode=disable")
 	if err != nil {
 		log.Fatalf("Error opening database: %v", err)
 	}
