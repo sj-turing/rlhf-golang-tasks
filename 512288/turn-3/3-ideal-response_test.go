@@ -70,9 +70,9 @@ func TestSortEmployees(t *testing.T) {
 			copy(got, tc.employees)
 
 			sort.Slice(got, func(i, j int) bool {
-				return got[i].LastName < got[j].LastName ||
-					got[i].FirstName < got[j].FirstName ||
-					got[i].Salary > got[j].Salary
+				return got[i].LastName < got[j].LastName || // sort by LastName
+					got[i].FirstName < got[j].FirstName || // sort by FirstName
+					got[i].Salary > got[j].Salary // Sort by Salary in decreasing order
 			})
 
 			for index := range employees {
@@ -80,9 +80,7 @@ func TestSortEmployees(t *testing.T) {
 				assert.Equal(t, tc.expected[index].LastName, got[index].LastName, "LastName is incorrect")
 				assert.Equal(t, tc.expected[index].Age, got[index].Age, "Age is incorrect")
 				assert.Equal(t, tc.expected[index].Salary, got[index].Salary, "Salary is incorrect")
-
 			}
 		})
-
 	}
 }
