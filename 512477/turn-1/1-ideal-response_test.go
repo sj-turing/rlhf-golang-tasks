@@ -1,3 +1,4 @@
+// filename: main_test.go
 package main
 
 import (
@@ -42,6 +43,7 @@ func concatBySprintf(strings []string) string {
 
 func concatByBuffer(strings []string) string {
 	var buf = &bytes.Buffer{}
+	defer buf.Reset()
 	for _, s := range strings {
 		buf.WriteString(s)
 	}
@@ -64,14 +66,14 @@ func BenchmarkConcatBySprintf(b *testing.B) {
 }
 
 // Benchmark using traditional string concatenation
-func BenchmarkConcatenation(b *testing.B) {
+func BenchmarkConcatByPlusOperator(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		concatByPlusOperator(inputString)
 	}
 }
 
 // Benchmark using bytes buffer for optimized concatenation
-func BenchmarkBuilder(b *testing.B) {
+func BenchmarkConcatByBuffer(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		concatByBuffer(inputString)
 	}
