@@ -1,0 +1,9 @@
+packages:
+  - package: 512281/turn-3/model-b/repository
+    mock_package: 512281/turn-3/model-b/mocks/repository
+    source_files:
+      - "*.go"
+  - package: myapp/anotherpackage
+    mock_package: myapp/mocks/anotherpackage
+    source_files:
+      - "*.go"
