@@ -1,0 +1,7 @@
+output_dir: ./mocks
+name_style: github.com/stretchr/testify/mock
+inpackage: true
+case: underscore
+
+include:
+  - repository/user_repository.go
