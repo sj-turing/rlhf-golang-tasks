@@ -4,11 +4,18 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"log"
 	"math/rand"
 	"net/http"
 	"net/http/httptest"
 	"testing"
 )
+
+func init() {
+	buf := &bytes.Buffer{}
+	defer buf.Reset()
+	log.SetOutput(buf)
+}
 
 var address = []string{"city1", "city2", "city3"}
 
@@ -49,6 +56,7 @@ func BenchmarkGetUsersByAddress(b *testing.B) {
 func setup() *UserService {
 	// Generate random users and populate both userService and userAddressIndex
 	// ... (Your implementation to generate random users and populate the indices)
+	//
 	userService := NewUserService()
 	size := 10000
 
